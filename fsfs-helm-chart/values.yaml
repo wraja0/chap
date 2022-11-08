@@ -1,0 +1,34 @@
+db:
+  name: Zm91cnNlYXNvbnNkYg==
+  host: ZnNuc2RiLWluc3RhbmNlLTEuY2xmaXl1a2ZsMXNpLnVzLWVhc3QtMS5yZHMuYW1hem9uYXdzLmNvbQ==
+  password: UWxhbW1lcnMzOTAzIQ==
+  port: MzMwNg==
+  username: YWRtaW4=
+deployment:
+  user: 
+    name: user-ms
+    image: 528966243529.dkr.ecr.us-east-1.amazonaws.com/fsfs-user-ms:44
+    port: 8070
+    path: /user
+    loginPath: /login
+  branch:
+    name: branch-ms
+    image: 528966243529.dkr.ecr.us-east-1.amazonaws.com/fsns-branch-ms:7
+    port: 8072
+    path: /branch
+  underwriter: 
+    name: underwriter-ms
+    image: 528966243529.dkr.ecr.us-east-1.amazonaws.com/fsns-underwriter-ms:11
+    port: 8071
+    path: /underwriter
+service: 
+  servicePort: 80
+  user: 
+    name: user-service
+  branch:
+    name: branch-service
+  underwriter:
+    name: underwriter-service
+nginx: 
+  ingressName: fsns-ingress
+  hostName: fourseasonsfinancialservices.com
